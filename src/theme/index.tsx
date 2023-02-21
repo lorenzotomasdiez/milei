@@ -1,14 +1,12 @@
-import { useMemo, ReactNode } from 'react';
-import { CssBaseline } from '@mui/material';
-import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
 import palette from './palette';
 import typography from './typography';
 import breakpoints from './breakpoints';
 import componentsOverride from './overrides';
+import { useMemo, ReactNode } from 'react';
+import { CssBaseline } from '@mui/material';
+import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
 import shadows, { customShadows } from './shadows';
 import { useSettings } from '@app/hooks';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   children: ReactNode;

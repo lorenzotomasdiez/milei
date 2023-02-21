@@ -1,6 +1,5 @@
 import { m } from 'framer-motion';
-import { forwardRef, ReactNode } from 'react';
-// @mui
+import React ,{ forwardRef, ReactNode } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Fab, FabProps, SxProps } from '@mui/material';
 
@@ -60,6 +59,8 @@ const FabButtonAnimate = forwardRef<HTMLButtonElement, Props>(
     );
   }
 );
+
+FabButtonAnimate.displayName = "FabButtonAnimate";
 
 export default FabButtonAnimate;
 
