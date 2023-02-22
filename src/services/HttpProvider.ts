@@ -32,17 +32,13 @@ export class Provider implements HttpProvider{
 }
 
 const quoteAxiosProvider = axios.create({
-  baseURL: 'https://quotes.rest',
+  baseURL: 'https://zenquotes.io/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-export class QuoteRestProvider implements HttpProvider{
-  async delete(url: string): Promise<HttpResponse> {
-    const {data, status} = await quoteAxiosProvider.delete(url);
-    return {data, status}
-  }
+export class ZenAPIProvider implements HttpProvider{
   async get(url: string): Promise<HttpResponse> {
     const {data, status} = await quoteAxiosProvider.get(url);
     return {data, status};
@@ -54,5 +50,9 @@ export class QuoteRestProvider implements HttpProvider{
   async put(url: string, body: any): Promise<HttpResponse> {
     const {data, status} = await quoteAxiosProvider.put(url, body);
     return {data, status};
+  }
+  async delete(url: string): Promise<HttpResponse> {
+    const {data, status} = await quoteAxiosProvider.delete(url);
+    return {data, status}
   }
 }

@@ -1,1 +1,1 @@
-export * from './quotes-rest';
+export * from './forismatic';

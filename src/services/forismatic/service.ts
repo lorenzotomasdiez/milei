@@ -1,9 +1,9 @@
 import HttpProvider from "../HttpProvider";
 
-export class QuoteRestApiClient{
+export class ZenAPIClient{
   constructor(private http:HttpProvider){}
-  async getQuod(){
-    const { data, status } = await this.http.get('/qod');
+  async get(){
+    const { data, status } = await this.http.get('/quotes');
     return { data, status };
   }
 }
