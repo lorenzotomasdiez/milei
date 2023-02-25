@@ -21,6 +21,7 @@ export const PATH_AUTH = {
 };
 
 export const PATH_PAGE = {
+  root:"/",
   comingSoon: '/coming-soon',
   maintenance: '/maintenance',
   pricing: '/pricing',
@@ -94,4 +95,4 @@ export const PATH_DASHBOARD = {
   },
 };
 
-export const PATH_DOCS = 'https://docs-minimals.vercel.app/introduction';
+export const PATH_COMPANY = "https://theno-technology.cc/";

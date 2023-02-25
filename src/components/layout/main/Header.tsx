@@ -8,6 +8,7 @@ import { Logo, Label } from '../../../components';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import navConfig from './MenuConfig';
+import { PATH_PAGE } from '../../../routes/paths';
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: HEADER.MOBILE_HEIGHT,
@@ -67,7 +68,7 @@ export default function MainHeader() {
           <Logo />
 
           <Link
-            href="https://docs-minimals.vercel.app/changelog"
+            href={PATH_PAGE.root}
             target="_blank"
             rel="noopener"
             underline="none"
