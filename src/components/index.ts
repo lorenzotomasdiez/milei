@@ -7,3 +7,4 @@ export { default as Scrollbar } from './Scrollbar';
 export { default as LoadingScreen } from './LoadingScreen';
 export { default as Page } from './Page';
 export * from './nav-section';
+export { default as TimerCounter } from './TimerCounter';
