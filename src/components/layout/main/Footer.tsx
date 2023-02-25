@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        py: 5,
+        py: 2,
         textAlign: "center",
         position: "relative",
         bgcolor: "background.default",
@@ -16,8 +16,7 @@ const Footer = () => {
       <Container>
         <Logo sx={{ mb: 1, mx: "auto" }} />
         <Typography variant="caption" component="p">
-          © All rights reserved
-          <br /> made by &nbsp;
+          © All rights reserved made by &nbsp;
           <Link href={PATH_COMPANY}>Theno Tech</Link>
         </Typography>
       </Container>
