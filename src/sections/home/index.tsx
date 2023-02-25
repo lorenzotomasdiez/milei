@@ -1,5 +1,6 @@
 import { styled } from "@mui/material";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 
 const RootStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -8,17 +9,9 @@ const RootStyle = styled('div')(({ theme }) => ({
 
 const HomeSection = () => {
   const [data, setData] = useState<any>(null);
-  useEffect(() => {
-    // new ZenService().get().then(res => console.log(res));
-    fetch('https://quotes.rest/qod').then(res => console.log(res));
-  },[])
   return (
     <RootStyle>
-      {/* {
-        data && (
-          JSON.stringify(data)
-        )
-      } */}
+     
     </RootStyle>
   )
 }
