@@ -1,6 +1,5 @@
 import { MotionContainer, TimerCounter, varFade } from "@app/components";
 import {
-  Box,
   Container,
   Stack,
   StackProps,
@@ -101,9 +100,9 @@ export default function HomeHero() {
                 marginBottom={{xs:"8px", lg:"14px"}}
                 fontSize={{xs:"12px", lg:"18px"}}
               >
-                Restan
+                Faltan
               </Typography>
-              <TimerCounter date={new Date("2023-12-10T00:00:00").toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })}/>
+              <TimerCounter date={new Date("2023-12-10T00:00:00.000-03:00")} />
             </m.div>
           </ContentStyle>
         </Container>
