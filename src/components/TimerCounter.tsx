@@ -79,7 +79,7 @@ export default function TimerCounter({ date }: Props) {
       setTimeLeft(timeToMs(new Date(date).getTime() - new Date().getTime()));
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [timeToMs, date]);
 
   const { translate } = useLocales();
 
