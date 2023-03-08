@@ -1,4 +1,4 @@
-// scroll bar
+import '../locales/i18n';
 import "simplebar/dist/simplebar.css";
 import "../styles/styles.css";
 import { MotionLazyContainer } from "@app/components";

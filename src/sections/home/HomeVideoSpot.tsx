@@ -1,5 +1,5 @@
 import { Iconify } from "@app/components";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 
@@ -84,6 +84,25 @@ export default function HomeVideoSpot() {
             />
           )}
         </IconButton>
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          zIndex: 10,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <Typography
+          variant="h1"
+          component="p"
+          textAlign="center"
+          color="common.white"
+          fontFamily={"'Bebas Neue'"}
+        >
+          La única posibilidad de poner fin a más de 40 años de corrupción
+        </Typography>
       </Box>
     </RootStyle>
   );

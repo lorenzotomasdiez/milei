@@ -1,3 +1,4 @@
+import { useLocales } from "@app/hooks";
 import { Card } from "@mui/material";
 import { Stack, styled, Typography } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
@@ -80,25 +81,27 @@ export default function TimerCounter({ date }: Props) {
     return () => clearInterval(interval);
   }, []);
 
+  const { translate } = useLocales();
+
   return (
     <StackStyle direction="row" justifyContent={"space-between"}>
       {timeLeft && (
         <>
           <CardStyle>
             <TypoStyle>{toTimeFormat(timeLeft.days)}</TypoStyle>
-            <FooterStyle>Dias</FooterStyle>
+            <FooterStyle>{translate('days')}</FooterStyle>
           </CardStyle>
           <CardStyle>
             <TypoStyle>{toTimeFormat(timeLeft.hours)}</TypoStyle>
-            <FooterStyle>Horas</FooterStyle>
+            <FooterStyle>{translate('hours')}</FooterStyle>
           </CardStyle>
           <CardStyle>
             <TypoStyle>{toTimeFormat(timeLeft.minutes)}</TypoStyle>
-            <FooterStyle>Minutos</FooterStyle>
+            <FooterStyle>{translate('minutes')}</FooterStyle>
           </CardStyle>
           <CardStyle>
             <TypoStyle>{toTimeFormat(timeLeft.seconds)}</TypoStyle>
-            <FooterStyle>Segundos</FooterStyle>
+            <FooterStyle>{translate('seconds')}</FooterStyle>
           </CardStyle>
         </>
       )}

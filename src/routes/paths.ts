@@ -22,17 +22,9 @@ export const PATH_AUTH = {
 
 export const PATH_PAGE = {
   root:"/",
-  comingSoon: '/coming-soon',
-  maintenance: '/maintenance',
-  pricing: '/pricing',
-  payment: '/payment',
-  about: '/about-us',
-  contact: '/contact-us',
-  faqs: '/faqs',
-  page403: '/403',
-  page404: '/404',
-  page500: '/500',
-  components: '/components',
+  mission: '/mission',
+  statistics: 'statistics',
+
 };
 
 export const PATH_DASHBOARD = {

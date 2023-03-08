@@ -1,4 +1,5 @@
 import { MotionContainer, TimerCounter, varFade } from "@app/components";
+import { useLocales } from "@app/hooks";
 import {
   Container,
   Stack,
@@ -48,6 +49,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
 }));
 
 export default function HomeHero() {
+  const { translate } = useLocales();
   return (
     <MotionContainer>
       <RootStyle>
@@ -75,7 +77,7 @@ export default function HomeHero() {
                 margin={-3}
                 padding={0}
               >
-                Javier Milei
+                {translate('javierMilei')}
               </Typography>
               <Typography
                 margin={0}
@@ -87,7 +89,7 @@ export default function HomeHero() {
                 textAlign="center"
                 fontSize={{xs:"56px", lg:"72px"}}
               >
-                Presidente
+                {translate('president')}
               </Typography>
             </m.div>
             <m.div variants={varFade().inUp}>
@@ -98,9 +100,9 @@ export default function HomeHero() {
                 textAlign="center"
                 marginTop="-15px"
                 marginBottom={{xs:"8px", lg:"14px"}}
-                fontSize={{xs:"12px", lg:"18px"}}
+                fontSize={{xs:"12px", lg:"16px"}}
               >
-                Faltan
+                {translate('daysLeft')}
               </Typography>
               <TimerCounter date={new Date("2023-12-10T00:00:00.000-03:00")} />
             </m.div>

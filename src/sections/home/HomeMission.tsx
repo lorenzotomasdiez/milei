@@ -11,6 +11,7 @@ import {
 import { MotionViewport, varFade } from "../../components/animate";
 import { useState } from "react";
 import { FirstGeneration, SecondGeneration, ThirdGeneration } from "./proyects";
+import { useLocales } from "@app/hooks";
 
 interface ComponentProps{
   onClose: () => void;
@@ -18,23 +19,20 @@ interface ComponentProps{
 
 const CARDS = [
   {
-    title: "Primera Generacion",
-    description:
-      "Las Reformas de primera generación buscan mejorar la economía de el país. Estas reformas incluyen la eliminación de la corrupción y el gasto improductivo del Estado, incentivos para la generación de empleo genuino y de calidad, la apertura al comercio, la mejora de la seguridad y la justicia, y la reforma del sistema financiero. El objetivo final es eliminar la inflación y lograr un mayor crecimiento económico.",
+    title: "generationsPlan.titleFirstGeneration",
+    description:"generationsPlan.summaryFirstGeneration",
     component: ({onClose}:ComponentProps) => (
       <FirstGeneration onClose={onClose}/>
     ),
   },
   {
-    title: "Segunda Generacion",
-    description:
-      "Reformas de segunda generación: se propone un sistema previsional basado en la capitalización individual, la descentralización administrativa del Estado hacia una órbita municipal, mejoras en las condiciones de trabajo del personal estatal y la eliminación progresiva de impuestos que gravan la producción, ganancia, trabajo y emprendimientos.",
+    title: "generationsPlan.titleSecondGeneration",
+    description:"generationsPlan.summarySecondGeneration",
     component: ({onClose}:ComponentProps) => (<SecondGeneration onClose={onClose}/>),
   },
   {
-    title: "Tercera Generacion",
-    description:
-      "Las Reformas de tercera generación son del sistema educativo y del sistema de salud. La primera busca garantizar la libertad de elección y la igualdad de condiciones para acceder a la educación de calidad en instituciones públicas o privadas mediante la implementación de Cupones Escolares (Vouchers). La segunda reforma busca eliminar la obligatoriedad de la afiliación a obras sociales, permitiendo a los trabajadores elegir libremente su seguro de salud o prepaga sin límites de permanencia mínima.",
+    title: "generationsPlan.titleThirdGeneration",
+    description:"generationsPlan.summaryThirdGeneration",
     component: ({onClose}:ComponentProps) => (<ThirdGeneration onClose={onClose}/>),
   },
 ];
@@ -103,7 +101,7 @@ const ModalStyled = styled(Box)(({ theme }) => ({
   borderRadius: "25px",
 }));
 
-export default function HomeMinimal() {
+export default function HomeMission() {
   const theme = useTheme();
   const isLight = theme.palette.mode === "light";
 
@@ -111,6 +109,8 @@ export default function HomeMinimal() {
     component: ({ onClose }: ComponentProps) => JSX.Element;
     open: boolean;
   }>(null);
+
+  const { translate } = useLocales();
 
   return (
     <RootStyle>
@@ -127,12 +127,12 @@ export default function HomeMinimal() {
               variant="overline"
               sx={{ mb: 2, color: "text.disabled" }}
             >
-              PROYECTO DE ESTADO
+              {translate('generationsPlan.helper')}
             </Typography>
           </m.div>
           <m.div variants={varFade().inDown}>
             <Typography variant="h2" fontWeight={"bold"}>
-              Reformas de 3 Generaciones
+              {translate('generationsPlan.title')}
             </Typography>
           </m.div>
         </Box>
@@ -154,12 +154,12 @@ export default function HomeMinimal() {
                 }
               >
                 <Typography variant="h5" paragraph>
-                  {card.title}
+                  {translate(card.title)}
                 </Typography>
                 <Typography
                   sx={{ color: isLight ? "text.secondary" : "common.white" }}
                 >
-                  {card.description}
+                  {translate(card.description)}
                 </Typography>
                 <Button
                   variant="text"
@@ -168,7 +168,7 @@ export default function HomeMinimal() {
                     setIsOpen({ component: card.component, open: true })
                   }
                 >
-                  Leer mas
+                  {translate('generationsPlan.readMore')}
                 </Button>
               </CardStyle>
             </m.div>
