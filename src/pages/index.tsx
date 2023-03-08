@@ -1,5 +1,5 @@
 import { Layout, Page } from "@app/components";
-import { HomeHero, HomeVideoSpot, HomeWhoIsMilei } from "@app/sections";
+import { HomeHero, HomeVideoSpot, HomeMission } from "@app/sections";
 import { styled } from "@mui/material";
 
 Home.getLayout = function getLayout(page: React.ReactElement) {
@@ -17,7 +17,7 @@ export default function Home() {
     <Page title="Home">
       <HomeHero />
       <ContentStyle>
-        <HomeWhoIsMilei />
+        <HomeMission />
         <HomeVideoSpot />
       </ContentStyle>
     </Page>

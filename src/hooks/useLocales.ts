@@ -18,9 +18,11 @@ export default function useLocales() {
     onChangeDirectionByLang(newlang);
   };
 
+  const translation = (text: any, options?: any) => translate(text, options).toString();
+
   return {
     onChangeLang: handleChangeLanguage,
-    translate: (text: any, options?: any) => translate(text, options),
+    translate: translation,
     currentLang,
     allLangs,
   };

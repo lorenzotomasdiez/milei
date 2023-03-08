@@ -1,14 +1,11 @@
 import { useRouter } from "next/router";
 import { styled, useTheme } from "@mui/material/styles";
-import { Box, Button, AppBar, Toolbar, Container, Link } from "@mui/material";
-import { useOffSetTop, useResponsive } from "../../../hooks";
+import { AppBar, Toolbar, Container, Stack, Link } from "@mui/material";
+import { useLocales, useOffSetTop, useResponsive } from "../../../hooks";
 import { cssStyles } from "../../../utils";
 import { HEADER } from "../../../config";
-import { Logo, Label } from "../../../components";
-import MenuDesktop from "./MenuDesktop";
-import MenuMobile from "./MenuMobile";
-import navConfig from "./MenuConfig";
-import { PATH_PAGE } from "../../../routes/paths";
+import { Logo } from "../../../components";
+import { PATH_PAGE } from "@app/routes";
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: HEADER.MOBILE_HEIGHT,
@@ -41,14 +38,10 @@ export default function MainHeader() {
 
   const theme = useTheme();
 
-  const { pathname } = useRouter();
-
-  const isDesktop = useResponsive("up", "md");
-
-  const isHome = pathname === "/";
+  const { translate } = useLocales();
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: "transparent" }}>
+    <AppBar sx={{ boxShadow: 0, bgcolor: "transparent", }}>
       <ToolbarStyle
         disableGutters
         sx={{
@@ -62,11 +55,12 @@ export default function MainHeader() {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-between",
           }}
         >
-          <Logo />
-
+            <Link href={PATH_PAGE.mission} variant="overline">{translate('planTitle')}</Link>
+            <Logo />
+            <Link href={PATH_PAGE.statistics} variant="overline">{translate('statisticsTitle')}</Link>
           {/* <Box sx={{ flexGrow: 1 }} /> */}
 
           {/* {isDesktop && <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />} */}
