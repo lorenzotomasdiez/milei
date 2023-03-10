@@ -66,7 +66,9 @@ const es = {
       "Eliminación de la obligatoriedad. El sindicalismo perderá su rol de intermediario en la provisión de la salud a través de las Obras Sociales y se promoverá un libre mercado de seguros de salud y prestaciones médicas donde el Estado tendrá el rol de supervisor y la responsabilidad primaria de garantizar cobertura a los sectores con menos recursos. Se permitirá la libre y rápida derivación de aportes a la obra social o prepaga que desee y prefiera el trabajador sin límites mínimos de permanencia, incluidos los trabajadores del sector público.",
   },
   textOverlayVideo:"La única posibilidad de poner fin a más de 40 años de corrupción",
-
+  beingBuilt:"Estamos trabajando en esta pagina",
+  comingSoon:"En breve",
+  statisticsText:'Estadisticas'
 };
 
 export default es;

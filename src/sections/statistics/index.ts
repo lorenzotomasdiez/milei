@@ -1,0 +1,1 @@
+export {default as StatisticsHero} from './StatisticsHero';

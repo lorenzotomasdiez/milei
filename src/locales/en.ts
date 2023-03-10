@@ -65,6 +65,9 @@ const en = {
       "Elimination of mandatory health care. Unionism will lose its role as an intermediary in the provision of health care through Social Works and a free market of health insurance and medical services will be promoted, where the State will have the role of supervisor and primary responsibility for ensuring coverage for the least privileged sectors. Free and rapid transfer of contributions to the social work or prepaid health care that the worker prefers will be allowed without minimum limits of permanence, including workers in the public sector.",
   },
   textOverlayVideo:"The only possibility to put an end to over 40 years of corruption.",
+  beingBuilt:"This page is being built",
+  comingSoon:"Coming Soon",
+  statisticsText:'Statistics'
 };
 
 export default en;
